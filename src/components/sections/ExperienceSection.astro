@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "../items/ExperienceItem.astro";
+import SectionContainer from "../SectionContainer.astro";
+import { BriefcaseBusiness } from "lucide-astro";
+
+const EXPERIENCE = [
+    {
+        time: 'XXXX - XXXX',
+        title: 'Diseñador UX/UI y Desarollador Web',
+        companyUrl: 'http://...',
+        companyName: 'Company name',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quibusdam distinctio aut eligendi non, aliquam sit minus porro! Dolores, distinctio?'
+    },
+]
+
+---
+
+<SectionContainer>
+
+    <h2 class="text-2xl font-semibold flex gap-3 items-center text-neutral-200">
+        <BriefcaseBusiness />
+        Experience
+    </h2>
+
+    <ol class="relative space-y-1 border-s-2 border-neutral-800">
+        {EXPERIENCE.map(experience => <ExperienceItem experience={experience}  /> )}
+    </ol>
+
+</SectionContainer>
