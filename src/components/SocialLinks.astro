@@ -1,0 +1,18 @@
+---
+import { Linkedin, Figma, Github, Instagram } from 'lucide-astro'
+
+let socialLinks = [
+    {url: "https://www.linkedin.com/in/vicwith-gg/", icon: Linkedin},
+    {url: "https://www.figma.com/@vicwithgg", icon: Figma},
+    {url: "https://github.com/Francisco-0510", icon: Github},
+]
+---
+
+<div class="flex gap-2">
+    {socialLinks.map(link => ( 
+        <a href={link.url} class="inline-flex items-center justify-center rounded-xl bg-neutral-800 p-2 opacity-80 transition-opacity duration-150 hover:opacity-100" target="_blank">
+            <link.icon class="size-4" />
+        </a>
+    ))}
+
+</div>
