@@ -1,9 +1,18 @@
 ---
-interface Props {
-	title: string;
-}
+// Supports weights 100-900
+import '@fontsource-variable/inter';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
-const { title } = Astro.props;
+let metadata = {
+	title: "Francisco Victorico - Portfolio",
+	description: "Apasionado Diseñador UX/UI y Desarrollador Web",
+	url: "...",
+	image: "...",
+	twitterHandle: "@VicWithGG1",
+	keywords: "Diseñador UX/UI, Desarrollador Web, Desarrollador Front-end, Ingeniero en Sistemas, Desarrollo y Gestión de Software",
+	author: "Francisco Victorico Aguirre Jiménez"
+}
 ---
 
 <!doctype html>
@@ -14,20 +23,38 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{metadata.title}</title>
 	</head>
+
 	<body>
-		<slot />
+
+		<Navbar />
+
+		<main class="p-5 mt-4 w-full mx-auto flex flex-col gap-6 md:max-w-4xl">
+			<slot />
+		</main>
+
+		<Footer />
+
+
 	</body>
+
 </html>
+
+
 <style is:global>
 	:root {
 		color-scheme: dark;
 	}
 	html {
-		
+		font-family: 'Inter Variable', sans-serif;
+		background: #171717;
+		scroll-behavior: smooth;
 	}
 	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
 
 	}
 </style>

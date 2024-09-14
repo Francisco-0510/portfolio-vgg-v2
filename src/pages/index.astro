@@ -1,9 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+
+import EducationSection from '../components/sections/EducationSection.astro';
+import ExperienceSection from '../components/sections/ExperienceSection.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import ProjectSection from '../components/sections/ProjectSection.astro';
+import SkillsSection from '../components/sections/SkillsSection.astro';
+import CertificateSection from '../components/sections/CertificateSection.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-
+<Layout>
+    <HeroSection />
+    <ExperienceSection />
+    <ProjectSection />
+    <EducationSection />
+    <CertificateSection />
+    <SkillsSection />
 </Layout>
 
