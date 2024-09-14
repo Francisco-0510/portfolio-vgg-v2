@@ -1,6 +1,7 @@
 ---
 // Supports weights 100-900
 import '@fontsource-variable/inter';
+
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
@@ -27,6 +28,7 @@ let metadata = {
 	</head>
 
 	<body>
+
 
 		<Navbar />
 
@@ -57,4 +59,9 @@ let metadata = {
 		min-height: 100vh;
 
 	}
+	.prevent-select {
+		-webkit-user-select: none; /* Safari */
+		-ms-user-select: none; /* IE 10 and IE 11 */
+		user-select: none; /* Standard syntax */
+		}
 </style>
