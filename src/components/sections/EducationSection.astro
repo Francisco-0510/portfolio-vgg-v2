@@ -1,0 +1,27 @@
+---
+import { GraduationCap } from "lucide-astro";
+import EducationItem from "../items/EducationItem.astro";
+import SectionContainer from "../SectionContainer.astro";
+
+const EDUCATION = [
+    {
+        time: '2015- Present',
+        title: 'Ing',
+        educationURL: 'http://',
+        EducationItem: 'UTVCO',
+    },
+]
+---
+
+<SectionContainer id="studies" className="animate-pulse-fade-in animate-delay-400 animate-duration-500">
+
+    <h2 class="text-2xl font-semibold flex gap-3 items-center text-neutral-200">
+        <GraduationCap />
+        Education
+    </h2>
+
+    <ol class="relative space-y-1 border-s-2 border-neutral-800">
+        {EDUCATION.map(education => <EducationItem education={education}/>)}
+    </ol>
+
+</SectionContainer>
