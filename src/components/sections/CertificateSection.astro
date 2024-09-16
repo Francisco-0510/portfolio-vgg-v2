@@ -1,0 +1,34 @@
+---
+import { FileBadge, MoveRight } from "lucide-astro";
+import CertificationItem from "../items/CertificationItem.astro";
+import SectionContainer from "../SectionContainer.astro";
+
+const CERTIFICATES = [
+    {
+        time: 'XXXX - XXXX',
+        title: 'Certificate Title',
+        certificationUrl: 'http://',
+        certificationName: 'Certification Name',
+        img: 'certificates-badges/pasen.jpeg',
+    }
+]
+---
+<SectionContainer id="certificates" className="animate-pulse-fade-in animate-delay-500 animate-duration-500">
+
+    <h2 class="text-2xl font-semibold flex gap-3 items-center text-neutral-200">
+        <FileBadge />
+        Certificates
+    </h2>
+    
+
+    <ol class="relative space-y-1 border-s-2 border-neutral-800">
+        {
+            CERTIFICATES.map(certificate => <CertificationItem certificate={certificate}/>)}
+    </ol>
+
+    <a href="https://www.linkedin.com/in/felipegiraldoo/details/certifications/" target="_blank" class="inline-flex items-center text-sm justify-center rounded-xl bg-neutral-800 dark:hover:text-neutral-50 py-2 px-4 opacity-80 transition-opacity duration-150 hover:opacity-100 w-full md:w-auto group gap-2 font-medium ">
+        More certificates
+        <MoveRight class="size-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-[1.5px] duration-200"/>
+    </a>
+
+</SectionContainer>
